@@ -5,6 +5,7 @@ const CommonConfig = require("./webpack.common");
 const PackageJSON = require("../package.json");
 
 const domain = process.env.PRODUCTION_DOMAIN;
+
 const ProdConfig = {
   mode: "production",
   output: {
@@ -18,6 +19,7 @@ const ProdConfig = {
       remotes: {
         marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
         auth: `auth@${domain}/auth/latest/remoteEntry.js`,
+        dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
       },
       shared: PackageJSON.dependencies,
     }),
